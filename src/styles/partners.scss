@@ -1,0 +1,34 @@
+.partners {
+  @media screen and (max-width: 749px) {
+
+  }
+  @media screen and (min-width: 750px) and (max-width: 1349px) {
+    padding: 0 40px;
+  }
+  @media screen and (min-width: 1350px) {
+    padding: 0 60px;
+  }
+  &__container {
+    display: grid;
+    @media screen and (max-width: 749px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 15px;
+    }
+    @media screen and (min-width: 750px) and (max-width: 1349px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media screen and (min-width: 1350px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    border-radius: 20px;
+    background-color: #F8F8F8;
+  }
+}

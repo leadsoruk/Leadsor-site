@@ -1,0 +1,74 @@
+.team {
+  @media screen and (max-width: 749px) {
+    padding: 0;
+    .section__title {
+      padding: 0 15px;
+    }
+  }
+  @media screen and (min-width: 750px) and (max-width: 1349px) {
+    padding: 0 70px;
+  }
+  @media screen and (min-width: 1350px) {
+    padding: 0 110px;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    @media screen and (max-width: 749px) {
+      padding: 0 15px;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    @media screen and (max-width: 749px) {
+      min-width: 250px;
+      gap: 15px;
+    }
+    @media screen and (min-width: 750px) and (max-width: 1349px) {
+      gap: 20px;
+    }
+    @media screen and (min-width: 1350px) {
+      gap: 24px;
+    }
+    & > * {
+      border-radius: 20px;
+    }
+
+    &__img {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      object-position: center;
+      object-fit: cover;
+    }
+    &__text {
+      &-container {
+        background-color: #F8F8F8;
+        flex-grow: 1;
+        @media screen and (max-width: 749px) {
+          padding: 15px;
+        }
+        @media screen and (min-width: 750px) and (max-width: 1349px) {
+          padding: 20px;
+        }
+        @media screen and (min-width: 1350px) {
+          padding: 24px;
+        }
+      }
+    }
+    &__title {
+      text-transform: uppercase;
+      font-size: 19px;
+      margin-bottom: 16px;
+    }
+    &__description {
+      color: #5C5C5C;
+    }
+  }
+}

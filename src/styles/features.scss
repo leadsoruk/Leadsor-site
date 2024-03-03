@@ -1,0 +1,119 @@
+.features {
+  @media screen and (max-width: 749px) {
+
+  }
+  @media screen and (min-width: 750px) and (max-width: 1349px) {
+    padding: 0 40px;
+  }
+  @media screen and (min-width: 1350px) {
+    padding: 0 60px;
+  }
+  &__container {
+    display: grid;
+    width: 100%;
+    @media screen and (max-width: 749px) {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    @media screen and (min-width: 750px) and (max-width: 1349px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      grid-auto-flow: row dense;
+      .features__card:nth-child(2),
+      //.features__card:nth-child(3),
+      .features__card:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+    @media screen and (min-width: 1350px) {
+      grid-template-columns: 41% 1fr 41%;
+      gap: 24px;
+      .features__card:nth-child(2),
+      .features__card:nth-child(3),
+      .features__card:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+  }
+  &-card {
+    @media screen and (max-width: 749px) {
+      font-size: 10px;
+    }
+    @media screen and (min-width: 750px) and (max-width: 1349px) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: 1350px) {
+      font-size: 16px;
+    }
+    &__img {
+      background-size: cover;
+      background-position: center;
+
+      @media screen and (max-width: 749px) {
+        aspect-ratio: 856 / 540;
+        border-radius: 16px;
+        margin-bottom: 16px;
+      }
+      @media screen and (min-width: 750px) and (max-width: 1349px) {
+        height: 300px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+      }
+      @media screen and (min-width: 1350px) {
+        height: 436px;
+        border-radius: 16px;
+        margin-bottom: 16px;
+      }
+
+      &_first {
+        background-image: url(img/features-1.jpg);
+      }
+      &_second {
+        background-image: url(img/features-2.jpg);
+      }
+      &_third {
+        background-image: url(img/features-3.jpg);
+      }
+      &_fourth {
+        background-image: url(img/features-4.jpg);
+      }
+      &_fifth {
+        background-image: url(img/features-5.jpg);
+      }
+      &_sixth {
+        background-image: url(img/features-6.jpg);
+      }
+    }
+    &__title {
+      font-weight: 600;
+      font-size: 1.6em;
+      &_link {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        font-weight: 500;
+      }
+    }
+    &__text {
+      &-container {
+        display: flex;
+        gap: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-end;
+        height: 100%;
+        padding: 24px;
+      }
+      &-list {
+        display: flex;
+        gap: 14px;
+      }
+      &-item {
+        padding: 14px;
+        border-radius: 12px;
+        background-color: var(--colorWhite);
+        font-size: 1em;
+        color: var(--colorWhiteCardList);
+      }
+    }
+  }
+}
