@@ -29,9 +29,14 @@
       background-image: url(img/1-2.jpg);
     }
     @media screen and (max-width: 749px) {
-      aspect-ratio: 1.4;
       padding: 15px;
       border-radius: 15px;
+      &_first {
+        min-height: 500px;
+      }
+      &_second {
+        aspect-ratio: 1.6;
+      }
     }
     @media screen and (min-width: 750px) and (max-width: 1349px) {
       position: absolute;
