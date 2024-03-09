@@ -50,6 +50,15 @@ li {
 }
 
 .section {
+  transition: opacity 2s;
+  &.invisible {
+    opacity: 0;
+  }
+  &.visible {
+    //animation: visibleFrame 2s forwards;
+    opacity: 1;
+  }
+
   @media screen and (max-width: 749px) {
     margin-bottom: 30px;
   }
@@ -79,5 +88,16 @@ li {
   }
   @media screen and (min-width: 1350px) {
     font-size: 36px;
+  }
+}
+
+@keyframes visibleFrame {
+  0% {
+    opacity: 0;
+    //translate: 0 50px;
+  }
+  100% {
+    opacity: 1;
+    //translate: 0 0;
   }
 }

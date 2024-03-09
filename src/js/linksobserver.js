@@ -1,3 +1,4 @@
+// header scroll
 const headerMarker = document.querySelector('.header-marker');
 const header = document.querySelector('.header');
 
@@ -19,39 +20,10 @@ const observerHeader = new IntersectionObserver(callbackHeader, optionsHeader);
 
 observerHeader.observe(headerMarker);
 
-
-//
-//
-// const navLinks = document.querySelectorAll('.nav__link');
-//
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             console.log(entry)
-//
-//             entry.target.classList.add('active');
-//             // entry.target.parentElement.classList.add('active');
-//         } else {
-//             entry.target.classList.remove('active');
-//             // entry.target.parentElement.classList.remove('active');
-//         }
-//     });
-// }, {
-//     rootMargin: '0px 0px -100px 0px',
-//     threshold: 0.5
-// });
-//
-// navLinks.forEach(link => {
-//     const targetId = link.getAttribute('href').slice(1);
-//     const targetElement = document.getElementById(targetId);
-//     // console.log(targetElement)
-//     observer.observe(targetElement);
-// });
-
-
+// active navLink
 const navLinks = document.querySelectorAll('.nav__link');
 
-const observer = new IntersectionObserver(entries => {
+const observerNavLink = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             navLinks.forEach(navLink => {
@@ -68,5 +40,19 @@ const observer = new IntersectionObserver(entries => {
 navLinks.forEach(link => {
     const targetId = link.getAttribute('href').slice(1);
     const targetElement = document.getElementById(targetId);
-    observer.observe(targetElement);
+    observerNavLink.observe(targetElement);
+});
+
+// sections visible
+const sections = document.querySelectorAll('.invisible');
+
+sections.forEach((section) => {
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            section.classList.remove('invisible');
+            section.classList.add('visible');
+        }
+    });
+
+    observer.observe(section);
 });

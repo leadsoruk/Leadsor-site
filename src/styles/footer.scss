@@ -4,6 +4,15 @@
   border-radius: 20px;
   background-image: url(img/footer.jpg);
   color: var(--colorWhite);
+
+  transition: opacity 2s;
+  &.invisible {
+    opacity: 0;
+  }
+  &.visible {
+    //animation: visibleFrame 2s forwards;
+    opacity: 1;
+  }
   &__title {
     color: var(--colorWhite);
     //font-size: 32px;
