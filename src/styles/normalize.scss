@@ -50,7 +50,7 @@ li {
 }
 
 .section {
-  transition: opacity 2s;
+  transition: opacity 1.5s ease-in;
   &.invisible {
     opacity: 0;
   }
